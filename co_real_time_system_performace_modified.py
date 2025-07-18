@@ -25,6 +25,9 @@ buffer = []
 data_points = []
 running = True
 clf = joblib.load("exercise_type_classifier_handcrafted.pkl") # Handcrafted multi-class model
+xgb_clf=joblib.load("XGB_classifier.pkl") 
+# Load the trained encoder
+label_encoder = joblib.load('label_encoder.pkl')
 prediction_label = None
 rep_count_label = None
 gyro_canvas = None
@@ -123,8 +126,10 @@ def perform_prediction():
 
         features = compute_handcrafted_features(segment)
         features_flat = features.reshape(1, -1)
-        prediction = clf.predict(features_flat)[0]
-
+        xgb_prediction = xgb_clf.predict(features_flat)[0]
+        print("xgb_prediction: %s" % xgb_prediction)
+        prediction = label_encoder.inverse_transform([xgb_prediction])[0]
+        print("prediction: %s" % prediction)
         rep_counts[prediction] = rep_counts.get(prediction, 0) + 1
 
         prediction_label.config(text=f"Activity: {prediction}", fg="#00FF00")
