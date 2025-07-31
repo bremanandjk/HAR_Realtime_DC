@@ -39,7 +39,7 @@ accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred)
 
 # Save model 
-joblib.dump(clf, "exercise_type_classifier_handcrafted.pkl")
+joblib.dump(clf, "RF_classifier.pkl")
 
 # Reporting
 print(f"\nModel Accuracy on Test Set: {accuracy:.4f}\n")
