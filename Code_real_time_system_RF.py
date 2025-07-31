@@ -103,7 +103,7 @@ def trigger_detection():
 
     # Call this function again after 5000ms (1 sec)
     if detection_running:
-        root.after(2000, trigger_detection)
+        root.after(5000, trigger_detection)
 
 def countdown_and_predict(count):
     if count > 0:

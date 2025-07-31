@@ -93,7 +93,7 @@ def write_to_csv(features, label, exercise):
 def user_input_thread():
     global buffer, latest_segment, current_exercise, clf 
     while running:
-        current_exercise = input("Enter the exercise type (e.g., bicep_curl, lateral_raise, front_raise, tricep_pulldown, butterfly_chest, overhead press, clapps, Bye, circle, Triangle, Boundary line, Punch): ").strip()
+        current_exercise = input("Enter the exercise type (e.g., Left, Right, Overhead, Circle, Triangle, No_sign, Clapps, Checkline): ").strip()
         
         # Load the classifier model for the current exercise
         # try:
