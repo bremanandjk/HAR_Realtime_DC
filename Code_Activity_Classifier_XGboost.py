@@ -39,7 +39,9 @@ clf.fit(X_train, y_train)
 # Predict and evaluate 
 y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
-report = classification_report(y_test, y_pred, target_names=label_encoder.classes_, zero_division=0)
+labels = [0,1,2,3,4,5,6,7]
+target_names = ["Left","Right","Circle","Triangle","No_sign","Clapps","Checkline","Overhead"]
+report = classification_report(y_test, y_pred, labels=labels, target_names=target_names)
 
 # Save model 
 joblib.dump(clf, "XGB_classifier.pkl")
