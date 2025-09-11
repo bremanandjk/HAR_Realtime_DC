@@ -138,7 +138,7 @@ def start_interface():
     global prediction_label, rep_count_label, gyro_canvas, accel_canvas, root
 
     root = tk.Tk()
-    root.title("Live Exercise Recognition (Handcrafted Features)")
+    root.title("Live Gesture Recognition System")
     root.geometry("500x750")
     root.configure(bg="#1e1e1e")
 
