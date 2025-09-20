@@ -1,4 +1,4 @@
-# === Recognition of exercises for the handcrafted method ===
+# === Recognition of Activity for the handcrafted method ===
 
 import sys
 sys.coinit_flags = 0  # 0 means MTA

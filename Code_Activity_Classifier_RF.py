@@ -1,4 +1,4 @@
-# === Exercise classifier for the handcrafted method ===
+# === Gesture classifier for the handcrafted method ===
 
 import sys
 sys.coinit_flags = 0  # 0 means MTA
